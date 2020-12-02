@@ -1,8 +1,8 @@
-# Mirage Starter Kit
+# Blog
 
-![Docker Image](https://github.com/huang825172/mirage-starter-kit/workflows/Docker%20Image/badge.svg)
+![Docker Image](https://github.com/limBuddies/Blog/workflows/Docker%20Image/badge.svg)
 
-基于 `Vue.js` ，`Bootstrap` ，`Express` ，`Sequelize` 构建网络应用的项目模板。
+基于 Mirage-Starter-Kit 构建的微型博客。
 
 ![Mirage](mirage.png)
 
