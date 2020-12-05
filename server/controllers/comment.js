@@ -1,5 +1,6 @@
 const sequelize = require('../db/db');
 
+//添加新评论
 async function addComment (req,res){
     try {
         await sequelize.authenticate();
@@ -23,6 +24,7 @@ async function addComment (req,res){
     }
 }
 
+//删除评论
 async function deleteComment (req,res){
     try {
         await sequelize.authenticate();

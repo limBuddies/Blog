@@ -1,5 +1,6 @@
 const sequelize = require('../db/db');
 
+//添加新用户
 async  function signup(req,res){
     try {
         await sequelize.authenticate();

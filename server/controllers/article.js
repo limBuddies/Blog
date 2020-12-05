@@ -1,5 +1,6 @@
 const sequelize = require('../db/db');
 
+//添加新文章
 async function addArticle(req,res){
     try {
         await sequelize.authenticate();
@@ -24,6 +25,7 @@ async function addArticle(req,res){
     }
 };
 
+//删除文章
 async function deleteArticle(req,res){
     try {
         await sequelize.authenticate();
