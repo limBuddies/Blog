@@ -37,4 +37,5 @@ async function getCounter(req, res) {
     }
 }
 
+
 module.exports = { addCounter, getCounter };
