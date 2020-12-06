@@ -5,8 +5,16 @@ const kLogoDark = require("./assets/logo_dark.png");
 
 // 导出API地址
 const kApiService = {
-  root: "https://yapi.baidu.com/mock/18128",
+  root: "/api",
+  addArticle: "/article-add",
+  getArticle: "/article-get",
   articleList: "/article-list",
+  addComment: "/comment",
+  getComment: "/comment-list",
+  delArticle: "/delete-article",
+  delComment: "/delete-comment",
+  login: "/login",
+  signup: "/signup"
 };
 
 function Api(api) {
