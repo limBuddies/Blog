@@ -36,7 +36,7 @@
             <b-textarea autofocus placeholder="你的评论" v-model="comment"></b-textarea>
             <b-button variant="danger" @click="addComment()" style="margin-top: 10px">发表</b-button>
           </div>
-          <div style="text-align: left" v-for="(c, ci) in comments" :key="ci">
+          <div style="text-align: left; margin-bottom: 50px;" v-for="(c, ci) in comments" :key="ci">
             <h4>{{ c.content }}</h4>
             <small>由</small><strong>{{ c.author }}</strong><small>评论于：</small><strong>{{ c.time }}</strong>
             <b-button
