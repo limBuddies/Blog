@@ -11,7 +11,7 @@ app.use(bodyParser.urlencoded({            //此项必须在 bodyParser.json 下
     extended: true
 }));
 
-const {addCounter, getCounter} = require('../controllers/counter');
+const {addCounter, getCounter, Like, Unlike} = require('../controllers/counter');
 
 const {addArticle, deleteArticle} = require('../controllers/article');
 
@@ -49,10 +49,12 @@ router
     .post('/delete-comment', async (req,res) => {
         await deleteComment(req,res);
     })
+    .post('/like',async (req,res) => {
+        await Like(req,res)
+    })
+    .post('/unlike',async (req,res) => {
+        await Unlike(req,res)
+        })
 ;
 
 module.exports = router;
-
-const sequelize = require('../db/db')
-require('../db/model');
-sequelize.sync({force: true});

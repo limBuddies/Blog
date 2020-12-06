@@ -24,10 +24,11 @@ Article.init(
         content: {type: DataTypes.TEXT, notnull: true},
         time: {type: DataTypes.DATE, notnull: true},
         author: {type: DataTypes.TEXT, notnull: true},
-        tag: {type: DataTypes.TEXT, notnull: true}
+        tag: {type: DataTypes.TEXT, notnull: true},
+        comment_count:{type:DataTypes.INTEGER}
     }, {
         sequelize,
-        modelName: 'article'
+        tableName: 'article'
     })
 
 class Comment extends Model {
@@ -42,7 +43,7 @@ Comment.init(
         time: {type: DataTypes.DATE, notnull: true}
     }, {
         sequelize,
-        modelName: 'comment'
+        tableName: 'comment'
     })
 
 class User extends Model {
@@ -57,7 +58,7 @@ User.init(
         email: {type: DataTypes.TEXT, notnull: true}
     }, {
         sequelize,
-        modelName: 'User'
+        tableName: 'User'
     })
 
 class Token extends Model {
@@ -68,8 +69,22 @@ Token.init({
     token: {type: DataTypes.STRING, notnull: true, unique: true}
 }, {
     sequelize,
-    modelName: 'Token'
+    tableName: 'Token'
 })
+
+class Count extends Model{
+}
+
+Count.init({
+    id:{type:DataTypes.INTEGER, primaryKey:true, autoIncrement:true},
+    aid:{type:DataTypes.INTEGER, notnull:true},
+    //此处设置一个表格储存类型为 Like or Unlike, 0为like, 1为unlike.
+    choose:{type:DataTypes.INTEGER, notnull:true}
+},{
+    sequelize,
+    modelName:'Count'
+})
+
 
 console.log(Article === sequelize.models.Article);
 console.log(Comment === sequelize.models.Comment);

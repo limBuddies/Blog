@@ -37,5 +37,42 @@ async function getCounter(req, res) {
     }
 }
 
+async function Like(req, res) {
+    try {
+        await sequelize.authenticate();
+        await sequelize.models.Count.create({
+            aid: req.body.data.aid,
+            choose:0
+        })
+        res.send(JSON.stringify({
+            status:'OK'
+        }))
+    } catch (err) {
+        console.log(err);
+        res.send(JSON.stringify({
+            status: 'FAIL',
+            err: err
+        }))
+    }
+}
 
-module.exports = { addCounter, getCounter };
+async function Unlike(req, res) {
+    try {
+        await sequelize.authenticate();
+        await sequelize.models.Count.create({
+            aid: req.body.data.aid,
+            choose:1
+        })
+        res.send(JSON.stringify({
+            status:'OK'
+        }))
+    } catch (err) {
+        console.log(err);
+        res.send(JSON.stringify({
+            status: 'FAIL',
+            err: err
+        }))
+    }
+}
+
+module.exports = {addCounter, getCounter, Like, Unlike};

@@ -8,6 +8,7 @@ async function addComment (req,res){
             cid:req.body.data.cid,
             author:req.body.data.author,
             content:req.body.data.content,
+            article_id:req.body.data.aid,
             time:now.toLocaleString()
         });
         res.send(JSON.stringify({
