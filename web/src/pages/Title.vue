@@ -30,13 +30,13 @@
         </div>
       </div>
       <div class="row">
-        <div class="col-md-10">
+        <div class="col-md-10" style="padding-bottom: 50px;">
           <h3 class="text-left">评论</h3>
           <div v-if="login_token" class="input">
             <b-textarea autofocus placeholder="你的评论" v-model="comment"></b-textarea>
             <b-button variant="danger" @click="addComment()" style="margin-top: 10px">发表</b-button>
           </div>
-          <div style="text-align: left; margin-bottom: 50px;" v-for="(c, ci) in comments" :key="ci">
+          <div style="text-align: left;" v-for="(c, ci) in comments" :key="ci">
             <h4>{{ c.content }}</h4>
             <small>由</small><strong>{{ c.author }}</strong><small>评论于：</small><strong>{{ c.time }}</strong>
             <b-button
