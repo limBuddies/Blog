@@ -9,7 +9,7 @@
         </div>
       </div>
       <div class="row">
-        <div class="col-2"></div>
+        <div class="col-2">dddd</div>
         <div class="col-8">
           <h5 style="margin-top: 30px; text-align: center">
             <strong>Mirage Starter Kit</strong> 是基于
@@ -17,6 +17,7 @@
             构建网络应用的项目模板。
           </h5>
         </div>
+    
       </div>
     </div>
   </div>
