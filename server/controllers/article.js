@@ -66,4 +66,4 @@ async function deleteArticle(req, res) {
 }
 
 
-module.exports = {addArticle, deleteArticle}
+module.exports = { addArticle, deleteArticle }

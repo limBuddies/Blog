@@ -11,9 +11,7 @@
       <div class="row">
         <div class="col-2"></div>
         <div class="col-8">
-          <h5 style="margin-top: 30px; text-align: center">
-            没有找到对应页面
-          </h5>
+          <h5 style="margin-top: 30px; text-align: center">没有找到对应页面</h5>
         </div>
       </div>
     </div>

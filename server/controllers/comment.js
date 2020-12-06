@@ -1,49 +1,49 @@
 const sequelize = require('../db/db');
 
 //添加新评论
-async function addComment (req,res){
+async function addComment(req, res) {
     try {
         await sequelize.authenticate();
         await sequelize.models.Comment.create({
-            cid:req.body.data.cid,
-            author:req.body.data.author,
-            content:req.body.data.content,
-            article_id:req.body.data.aid,
-            time:now.toLocaleString()
+            cid: req.body.data.cid,
+            author: req.body.data.author,
+            content: req.body.data.content,
+            article_id: req.body.data.aid,
+            time: now.toLocaleString()
         });
         res.send(JSON.stringify({
-                status:'OK'
-            }))
+            status: 'OK'
+        }))
 
 
-    } catch (err){
+    } catch (err) {
         console.log(err);
         res.send(JSON.stringify({
-            status:'FAIL',
-            err:err
+            status: 'FAIL',
+            err: err
         }))
     }
 }
 
 //删除评论
-async function deleteComment (req,res){
+async function deleteComment(req, res) {
     try {
         await sequelize.authenticate();
         await sequelize.models.Comment.remove({
-            cid:req.body.data.cid,
+            cid: req.body.data.cid,
         });
         res.send(JSON.stringify({
-            status:'OK'
+            status: 'OK'
         }))
 
 
-    } catch (err){
+    } catch (err) {
         console.log(err);
         res.send(JSON.stringify({
-            status:'FAIL',
-            err:err
+            status: 'FAIL',
+            err: err
         }))
     }
 }
 
-module.exports = { addComment, deleteComment}
+module.exports = { addComment, deleteComment }

@@ -42,10 +42,10 @@ async function Like(req, res) {
         await sequelize.authenticate();
         await sequelize.models.Count.create({
             aid: req.body.data.aid,
-            choose:0
+            choose: 0
         })
         res.send(JSON.stringify({
-            status:'OK'
+            status: 'OK'
         }))
     } catch (err) {
         console.log(err);
@@ -61,10 +61,10 @@ async function Unlike(req, res) {
         await sequelize.authenticate();
         await sequelize.models.Count.create({
             aid: req.body.data.aid,
-            choose:1
+            choose: 1
         })
         res.send(JSON.stringify({
-            status:'OK'
+            status: 'OK'
         }))
     } catch (err) {
         console.log(err);
@@ -75,4 +75,4 @@ async function Unlike(req, res) {
     }
 }
 
-module.exports = {addCounter, getCounter, Like, Unlike};
+module.exports = { addCounter, getCounter, Like, Unlike };

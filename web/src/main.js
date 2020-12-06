@@ -2,7 +2,7 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import routes from './routes'
 import axios from 'axios'
-import {BootstrapVue, BootstrapVueIcons} from 'bootstrap-vue'
+import { BootstrapVue, BootstrapVueIcons } from 'bootstrap-vue'
 import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
 
@@ -29,6 +29,6 @@ router.beforeEach((to, from, next) => {
 
 new Vue({
     router,
-    components: {App},
+    components: { App },
     template: '<App/>'
 }).$mount('#app');

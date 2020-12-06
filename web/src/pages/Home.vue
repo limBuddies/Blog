@@ -2,17 +2,26 @@
   <div>
     <Navbar></Navbar>
     <div class="container">
-      <div class="article-list-item" v-for="(post, i) in posts" :key="i">
+      <div
+        class="article-list-item"
+        v-for="(post, i) in posts"
+        :key="i"
+        v-bind:style="{
+          backgroundImage: 'url(' + post.bg + ')',
+          backgroundSize: '100% 100%',
+        }"
+      >
         <h1 class="article-title">{{ post.title }}</h1>
-        <h3>{{ post.note }}</h3>
-        <strong>{{ post.time }}</strong
-        ><br />
-        <small>Created by: {{ post.author }}</small
-        ><br />
-        Tags:
-        <small v-for="(t, ti) in post.tag" :key="ti">
-          {{ t }} /
-        </small>
+        <h3 class="article-brief-information">{{ post.note }}</h3>
+        <div class="article-related-information">
+          <strong>{{ post.time }}</strong>
+          <br />
+          <small>Created by: {{ post.author }}</small>
+        </div>
+        <div class="tag-value">
+          Tags:
+          <small v-for="(t, ti) in post.tag" :key="ti"> {{ t }} / </small>
+        </div>
       </div>
     </div>
   </div>
@@ -52,12 +61,29 @@ export default {
 }
 
 .article-list-item {
-  margin-top: 50px;
   border: lightgray solid 1px;
   padding: 10px;
+  display: grid;
+  grid-template-columns: repeat(7, 14.4%);
+  grid-template-rows: (7, 14.4%);
 }
 
 .article-title {
-  margin-left: 50px;
+  grid-column-start: 3;
+  grid-column-end: 6;
+  grid-row-start: 4;
+  grid-row-end: 5;
+}
+
+.article-related-information {
+  grid-area: 7 / 7 / span1 / span1;
+}
+
+.article-brief-information {
+  grid-area: 6 / 2 / span1 / span5;
+}
+
+.tag-value {
+  grid-area: 7 / 1 / span1 / span1;
 }
 </style>
