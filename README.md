@@ -4,6 +4,8 @@
 
 基于 Mirage-Starter-Kit 构建的微型博客。
 
+[Mirage-Blog 完全解析](Mirage-Blog完全解析.md)
+
 ## 测试网址
 
 [http://119.29.60.125](http://119.29.60.125/)
