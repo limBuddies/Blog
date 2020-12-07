@@ -10,8 +10,8 @@
         </div>
       </div>
       <div class="row">
-        <div class="col-4"></div>
-        <div class="col-4" id="inputs">
+        <div class="col-sm-1 col-md-4"></div>
+        <div class="col-sm-10 col-md-4" id="inputs">
           <b-input
               placeholder="用户名"
               style="margin-bottom: 10px"
@@ -64,6 +64,9 @@ export default {
           .then((res) => {
             this.msg = res.data.status === "OK" ? "注册成功" : "注册失败";
             this.alert_show = true;
+            if (res.data.status === "OK") {
+              setTimeout(()=>this.$router.push('/login'), 1000);
+            }
           })
           .catch((err) => console.log(err));
     }
