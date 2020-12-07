@@ -29,6 +29,9 @@ import Navbar from "../components/Navbar";
 
 export default {
   name: "Compose.vue",
+  components: {
+    Navbar,
+  },
   data() {
     return {
       title: "",
