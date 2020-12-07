@@ -21,6 +21,7 @@
               placeholder="密码"
               type="password"
               v-model="password"
+              @keyup.enter="login()"
           ></b-input>
           <b-button id="login_button" variant="danger" @click="login()">
             <strong v-if="username === '' || password === ''"
